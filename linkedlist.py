@@ -48,8 +48,18 @@ def only_vowels(llist):
         >>> new_llist.head.data == "apple"
         True
     """
+    vowel_llist = LinkedList()
+    vows = ['a','e','i','o','u']
 
-    pass
+    current =llist.head
+
+    while current is not None:
+        
+        if current.data[0] in vows:
+            vowel_llist.add_node(current.data)
+            current = current.next
+
+    return vowel_llist
 
 
 if __name__ == "__main__":

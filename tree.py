@@ -48,8 +48,20 @@ class Tree(object):
         """
 
         # TODO: Complete this function
+        Nodes_with_data = []
+        check_nodes =[self]
 
-        pass
+        while check_nodes:
+            current = check_nodes.pop(0)
+            
+            if current.data == data:
+                Nodes_with_data.append(current)
+                
+            check_nodes.extend(current.children)
+
+
+        return Nodes_with_data
+
 
 
 if __name__ == "__main__":
