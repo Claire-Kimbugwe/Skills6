@@ -8,10 +8,13 @@ O(1) or O(n)
 
 
 2. Runtime for duplicate_letters:
+O(nmz)
 
 
 
 3. Runtime for duplicate_letters2:
+
+O(n)
 
 
 
