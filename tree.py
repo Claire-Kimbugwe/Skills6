@@ -49,14 +49,17 @@ class Tree(object):
 
         # TODO: Complete this function
         Nodes_with_data = []
-        check_nodes =[self]
+        check_nodes =[self.root]
+
+        
 
         while check_nodes:
+
             current = check_nodes.pop(0)
             
             if current.data == data:
                 Nodes_with_data.append(current)
-                
+
             check_nodes.extend(current.children)
 
 
