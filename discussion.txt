@@ -2,6 +2,8 @@ Runtime
 -------
 
 1. Runtime for does_string_contain_letter:
+O(1) or O(n)
+
 
 
 
@@ -21,14 +23,19 @@ Stacks and Queues
    a built-in Python list? Explain why, referencing the runtime requirements for
    Stack operations (push, pop, etc).
 
-
-
+   A stack adds items at the top of the stack and also removes from the top. In reference to runtime  both linked lists and python built in lists have O(1) for adding and removing items to the end.
+   a python built in list is better for building stacks since you already have a method that can easily make one.
+   
+   
 
 
 
 2. Which would be a better data structure for creating a Queue: a Linked List or
    a built-in Python list? Explain why, referencing the runtime requirements for
    Queue methods (enqueue, dequeue, etc).
+
+   In a queue enqueue adds an item to the end of the queue, to add an item to the end of of both a linked list and python's built in  list is O(1) 
+   In a queue, dequeue is remove item from the beginning of the queue, to remove an item from the begining of a python list is O(n) but to remove from beginning of a linked list is O(1)
 
 
 
@@ -38,13 +45,51 @@ Trees
 1. Using the diagram in the instructions, in what order would a Breadth First
    Search (BFS) algorithm visit each node  until finding burritos (starting at
    food)?
+using the Queue-like algorithm. First in First Out
+1.list starts off at [food]
+2.food is poped but since food isnt burrito his children are added to list ['italian','indian','mexican']
+3. Italian is poped from list and is not burrito, his children are added to list ['indian','mexican','lasagna','piza']
+4. Indian is poped from list since he isnt burrito his children are added 
+['mexican','lasagna','piza','takka masala','saag']
+5.Mexican is poped and added children
+['lasagna','piza','takka masala','saag', 'burrito', 'tacos', 'enchiladas']
+6. lasagna is poped off has no children so nothinng is added to list
+['piza','takka masala','saag', 'burrito', 'tacos', 'enchiladas']
+7. pizza is poped off, Not him so added his children to list
+['takka masala','saag', 'burrito', 'tacos', 'enchiladas','thin_crust','chicago-style','NY-style, 'sililian']
+8. Tikka-masala is poped has no children
+['saag', 'burrito', 'tacos', 'enchiladas','thin_crust','chicago-style','NY-style, 'sililian']
+9. Saag is poped has no children 
+['burrito', 'tacos', 'enchiladas','thin_crust','chicago-style','NY-style, 'sililian']
+10. burrito is poped -- END of search
+
 
 
 2. Using the diagram in the instructions, In what order would a Depth First 
    Search (DFS) algorithm visit each node until finding Chicago-style (starting
    at food)? 
 
+ using a stack, Last in first out
+ 1. start with [food] 
+ 2. pop food not him add children ['italian','indian','mexican']
+ 3. pop mexican not him add children ['italian','indian','burrito', 'tacos', 'enchiladas']
+ 4. pop enchiladas not him and no children ['italian','indian','burrito', 'tacos']
+ 5. pop tacos not him, no hildren ['italian','indian','burrito']
+ 6. pop burrito no him and no children ['italian','indian']
+ 7. pop indian add children ['italian','tikka masala','saag']
+ 8. pop saag no children ['italian','tikka masala']
+ 9. pop tikka masala , no children ['italian']
+ 11. pop italian add children ['lasagna','piza']
+ 12. pop piza add chiildren ['lasagna','thin_crust','chicago-style','NY-style, 'sililian']
+ 13. pop silian, no children ['lasagna','thin_crust','chicago-style','NY-style]
+ 14. pop new York style no children ['lasagna','thin_crust','chicago-style']
+ 15. pop chicago-style -- END search 
+
 3. How is a binary search tree different from other trees?
+ each node in a binary search tree has no more than two children
+ the nodes on a binary search tree have some form of ordering, 
+ the parent node's left-child is smaller than or equal to the parent node and the right-child is bigger than or equal to the parent child 
+ this is not the same with other trees.
 
 
 
