@@ -49,7 +49,7 @@ def only_vowels(llist):
         True
     """
     vowel_llist = LinkedList()
-    vows = ['a','e','i','o','u']
+    vows = ['a','e','i','o','u','A','E','I','O','U']
 
     current =llist.head
 
@@ -57,7 +57,8 @@ def only_vowels(llist):
         
         if current.data[0] in vows:
             vowel_llist.add_node(current.data)
-            current = current.next
+            
+        current = current.next
 
     return vowel_llist
 
