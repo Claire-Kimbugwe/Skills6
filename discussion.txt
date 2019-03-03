@@ -2,13 +2,13 @@ Runtime
 -------
 
 1. Runtime for does_string_contain_letter:
-O(1) or O(n)
+O(n)
 
 
 
 
 2. Runtime for duplicate_letters:
-O(nmz)
+O(nmz) => O(n^3)
 
 
 
@@ -27,7 +27,7 @@ Stacks and Queues
    Stack operations (push, pop, etc).
 
    A stack adds items at the top of the stack and also removes from the top. In reference to runtime  both linked lists and python built in lists have O(1) for adding and removing items to the end.
-   a python built in list is better for building stacks since you already have a method that can easily make one.
+   a python built in list is easier to use for building stacks since you already have a method that can easily make one. but a linked list will be better if we look into resources.
    
    
 
@@ -39,6 +39,7 @@ Stacks and Queues
 
    In a queue enqueue adds an item to the end of the queue, to add an item to the end of of both a linked list and python's built in  list is O(1) 
    In a queue, dequeue is remove item from the beginning of the queue, to remove an item from the begining of a python list is O(n) but to remove from beginning of a linked list is O(1)
+   so in this case a linked list is a better data structure for making a queue
 
 
 
@@ -92,7 +93,7 @@ using the Queue-like algorithm. First in First Out
  each node in a binary search tree has no more than two children
  the nodes on a binary search tree have some form of ordering, 
  the parent node's left-child is smaller than or equal to the parent node and the right-child is bigger than or equal to the parent child 
- this is not the same with other trees.
+ 
 
 
 
